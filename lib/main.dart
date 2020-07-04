@@ -31,7 +31,10 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('Left button got pressed');
+                setState(() {
+                  leftDiceNumber = 5;
+                  print('diceNumber = $leftDiceNumber');
+                });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
             ),
@@ -39,7 +42,10 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
                 onPressed: () {
-                  print('Right button got pressed');
+                  setState(() {
+                    rightDiceNumber = 6;
+                    print('rightDice = $rightDiceNumber');
+                  });
                 },
                 child: Image.asset('images/dice$rightDiceNumber.png')),
           ),
