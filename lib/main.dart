@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+
+import 'package:flutter/services.dart';
 
 void main() {
   return runApp(
@@ -32,7 +35,8 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = 5;
+                  leftDiceNumber = Random().nextInt(6) + 1;
+                  rightDiceNumber = Random().nextInt(6) + 1;
                   print('diceNumber = $leftDiceNumber');
                 });
               },
@@ -43,7 +47,8 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
                 onPressed: () {
                   setState(() {
-                    rightDiceNumber = 6;
+                    rightDiceNumber = Random().nextInt(6) + 1;
+                    leftDiceNumber = Random().nextInt(6) + 1;
                     print('rightDice = $rightDiceNumber');
                   });
                 },
